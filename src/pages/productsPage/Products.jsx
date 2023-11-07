@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useGlobalProductsContext } from "../../context/productsContext";
 import Product from "./Product";
+import "./products.css"
 
 const Products = () => {
   // access value props from ProductsProvider
@@ -29,13 +30,13 @@ const Products = () => {
   }, []);
 
   return (
-    <>
+    <div className="products">
       {/* conditional rendering/short-circuit */}
       {productsState.products &&
         productsState.products.map((product) => {
           return <Product key={product.id} product={product} />;
         })}
-    </>
+    </div>
   );
 };
 

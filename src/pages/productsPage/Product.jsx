@@ -15,16 +15,14 @@ const Product = ({ product }) => {
     thumbnail,
     title,
   } = product;
-  
+
   return (
-    <div>
-      <div className="image">
-        <img src={thumbnail} alt={title} />
-      </div>
+    <div className="product">
+      <img className="image" src={thumbnail} alt={title} />
       <div className="details">
         <h3 className="title">{title}</h3>
         <div className="price-cart">
-          <div className="price">${price}</div>
+          <div className="price">{price}</div>
           <div className="cart">
             <i className="fa-solid fa-cart-shopping"></i>
           </div>
