@@ -1,10 +1,16 @@
+:root {
+  --blue: #0077b6;
+  --white: #fff;
+}
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0077b6;
-  color: #fff;
+  background-color: var(--blue);
+  color: var(--white);
   padding: 1rem;
+  position: sticky;
+  top: 0;
 }
 header h1 a {
   text-decoration: none;

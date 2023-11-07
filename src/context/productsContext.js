@@ -24,7 +24,7 @@ export const ProductsProvider = ({ children }) => {
         return {
           ...state,
           loading: false,
-          products: action.payload,
+          products: [...state.products, ...action.payload],
           error: "",
         };
       case "FETCH_ERROR":

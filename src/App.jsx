@@ -7,8 +7,8 @@ import Navbar from "./components/navbar/Navbar";
 const App = () => {
   return (
     <div className="App">
+      <Navbar />
       {/* configure routes */}
-      <Navbar/>
       <Routes>
         <Route path="/products" element={<Products />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
