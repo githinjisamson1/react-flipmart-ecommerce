@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077b6;
+  color: #fff;
+  padding: 1rem;
+}
+header h1 a {
+  text-decoration: none;
+  color: #fff;
+}
+.navigation-links a {
+  margin-right: 1rem;
+}
