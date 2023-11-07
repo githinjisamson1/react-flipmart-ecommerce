@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useGlobalProductsContext } from "../../context/productsContext";
 import Product from "./Product";
-import "./products.css"
+import "./products.css";
 
 const Products = () => {
   // access value props from ProductsProvider
@@ -26,6 +26,7 @@ const Products = () => {
 
   // run side effect once/initial render
   useEffect(() => {
+    setTimeout(() => {});
     fetchAllProducts();
   }, []);
 
