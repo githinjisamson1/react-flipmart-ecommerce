@@ -30,9 +30,11 @@ const Products = () => {
 
   return (
     <>
-      {productsState.products.map((product) => {
-        return <Product key={product.id} product={product} />;
-      })}
+      {/* conditional rendering/short-circuit */}
+      {productsState.products &&
+        productsState.products.map((product) => {
+          return <Product key={product.id} product={product} />;
+        })}
     </>
   );
 };
