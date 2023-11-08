@@ -9,38 +9,59 @@ export const ShoppingCartProvider = ({ children }) => {
   const initialShoppingCartState = {
     shoppingCart: [],
     shoppingCartCount: 0,
+    totalPrice: 0,
   };
-
-  // !updating shoppingCartCount based on previousState
-  const incShoppingCartCount = (prevState) => {
-    return prevState.shoppingCartCount + 1;
-  };
-  
-  const decShoppingCartCount = (prevState) => {
-    return prevState.shoppingCartCount - 1;
-  };
-
-  // !OR use immmediately invoked function
-  // (function (prevState) {
-  //   return prevState.shoppingCartCount + 1;
-  // })(state);
 
   // shoppingCartReducer;
   const shoppingCartReducer = (state, action) => {
+    // !handleAddToCart
+    const handleAddToCart = (state) => {
+      return [...state.shoppingCart, action.payload];
+    };
+
+    // !handleDeleteFromCart
+    const handleDeleteFromCart = (state) => {
+      return state.shoppingCart.filter((cartItem) => {
+        return cartItem.id !== action.payload.id;
+      });
+    };
+
+    // !updating shoppingCartCount based on previousState/INCREASE
+    const handleIncreasingCartCount = (prevState) => {
+      return prevState.shoppingCartCount + 1;
+    };
+
+    // !updating shoppingCartCount based on previousState/DECREASE
+    const handleDecreasingCartCount = (prevState) => {
+      return prevState.shoppingCartCount - 1;
+    };
+
+    // !OR use immmediately invoked function
+    // (function (prevState) {
+    //   return prevState.shoppingCartCount + 1;
+    // })(state);
+
     switch (action.type) {
       case "ADD_TO_CART":
         return {
           ...state,
-          shoppingCart: [...state.shoppingCart, action.payload],
-          shoppingCartCount: incShoppingCartCount(state),
+          shoppingCart: handleAddToCart(state),
+          shoppingCartCount: handleIncreasingCartCount(state),
+          totalPrice: handleAddToCart(state).reduce((accumulator, cartItem) => {
+            return (accumulator += cartItem.price);
+          }, initialShoppingCartState.totalPrice),
         };
       case "REMOVE_FROM_CART":
         return {
           ...state,
-          shoppingCart: state.shoppingCart.filter((cartItem) => {
-            return cartItem.id !== action.payload.id;
-          }),
-          shoppingCartCount: decShoppingCartCount(state),
+          shoppingCart: handleDeleteFromCart(state),
+          shoppingCartCount: handleDecreasingCartCount(state),
+          totalPrice: handleDeleteFromCart(state).reduce(
+            (accumulator, cartItem) => {
+              return (accumulator += cartItem.price);
+            },
+            initialShoppingCartState.totalPrice
+          ),
         };
       default:
         return state;
