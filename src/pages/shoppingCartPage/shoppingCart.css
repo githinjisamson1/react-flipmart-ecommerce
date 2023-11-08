@@ -1,1 +1,75 @@
-rafce
+.shopping-cart {
+  /* background-color: yellow; */
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart-item {
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 50%;
+}
+
+.cart-item .bottom,
+.cart-item .bottom .increase-count-decrease,
+.cart-item .bottom .price-delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopping-cart .cart-item .top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cart-item .top .image {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid maroon;
+  border-radius: 5px;
+}
+.bottom {
+  margin: 1rem 0;
+}
+.bottom .increase-count-decrease {
+  width: 200px;
+  /* background-color: yellow; */
+  /* gap: 1rem; */
+}
+.cart-item button {
+  padding: 5px;
+  background-color: goldenrod;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.cart-item button:hover {
+  background-color: #fff;
+  color: goldenrod;
+  border: 1px solid #ccc;
+}
+.cart-item .bottom .price-delete {
+  gap: 2rem;
+}
+.cart-item .bottom .price-delete .price::before {
+  content: "$ ";
+  color: maroon;
+  font-weight: 700;
+}
+.cart-item .bottom .price-delete .price {
+  font-weight: 200;
+}
+.cart-item .bottom .price-delete .delete {
+  color: maroon;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
