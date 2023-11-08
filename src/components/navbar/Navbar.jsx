@@ -26,6 +26,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink style={navLinkStyles} to="shoppingCart">
           <i className="fa-solid fa-bag-shopping"></i>
+          <span className="cart-items-count">98</span>
         </NavLink>
       </div>
     </header>
