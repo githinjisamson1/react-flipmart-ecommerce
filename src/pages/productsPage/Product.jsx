@@ -1,7 +1,12 @@
 import React from "react";
+import { useGlobalShoppingCartContext } from "../../context/shoppingCartContext";
 
 // prop drilling product from Products
 const Product = ({ product }) => {
+  // access value prop from ShoppingCartProvider
+  const { dispatchForShoppingCart } = useGlobalShoppingCartContext();
+
+  // destructuring product
   const {
     brand,
     category,
@@ -24,7 +29,15 @@ const Product = ({ product }) => {
         <div className="price-cart">
           <div className="price">{price}</div>
           <div className="cart">
-            <i className="fa-solid fa-cart-shopping"></i>
+            <i
+              onClick={() => {
+                dispatchForShoppingCart({
+                  type: "ADD_TO_CART",
+                  payload: product,
+                });
+              }}
+              className="fa-solid fa-cart-shopping"
+            ></i>
           </div>
         </div>
       </div>

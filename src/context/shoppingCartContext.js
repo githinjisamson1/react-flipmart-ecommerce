@@ -13,6 +13,18 @@ export const ShoppingCartProvider = ({ children }) => {
   // shoppingCartReducer;
   const shoppingCartReducer = (state, action) => {
     switch (action.type) {
+      case "ADD_TO_CART":
+        return {
+          ...state,
+          shoppingCart: [...state.shoppingCart, action.payload],
+        };
+      case "REMOVE_FROM_CART":
+        return {
+          ...state,
+          shoppingCart: state.shoppingCart.filter((cartItem) => {
+            return cartItem.id !== action.payload.id;
+          }),
+        };
       default:
         return state;
     }
@@ -27,7 +39,7 @@ export const ShoppingCartProvider = ({ children }) => {
   // context API
   return (
     <ShoppingCartContext.Provider
-      value={{ shoppingCartReducer, dispatchForShoppingCart }}
+      value={{ shoppingCartState, dispatchForShoppingCart }}
     >
       {children}
     </ShoppingCartContext.Provider>
