@@ -1,8 +1,12 @@
 import React from "react";
 import { useGlobalShoppingCartContext } from "../../context/shoppingCartContext";
+import { useNavigate } from "react-router-dom";
 
 // prop drilling product from Products
 const Product = ({ product }) => {
+  // to change location
+  const navigate = useNavigate();
+
   // access value prop from ShoppingCartProvider
   const { dispatchForShoppingCart } = useGlobalShoppingCartContext();
 
@@ -23,7 +27,14 @@ const Product = ({ product }) => {
 
   return (
     <div className="product">
-      <img className="image" src={thumbnail} alt={title} />
+      <img
+        onClick={() => {
+          navigate(`${id}`);
+        }}
+        className="image"
+        src={thumbnail}
+        alt={title}
+      />
       <div className="details">
         <h3 className="title">{title}</h3>
         <div className="price-cart">
@@ -35,6 +46,7 @@ const Product = ({ product }) => {
                   type: "ADD_TO_CART",
                   payload: product,
                 });
+                alert("Product added to cart");
               }}
               className="fa-solid fa-cart-shopping"
             ></i>
