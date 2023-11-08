@@ -11,23 +11,28 @@ export const ShoppingCartProvider = ({ children }) => {
     shoppingCartCount: 0,
   };
 
+  // !updating shoppingCartCount based on previousState
+  const incShoppingCartCount = (prevState) => {
+    return prevState.shoppingCartCount + 1;
+  };
+  
+  const decShoppingCartCount = (prevState) => {
+    return prevState.shoppingCartCount - 1;
+  };
+
+  // !OR use immmediately invoked function
+  // (function (prevState) {
+  //   return prevState.shoppingCartCount + 1;
+  // })(state);
+
   // shoppingCartReducer;
   const shoppingCartReducer = (state, action) => {
-    const newShoppingCartCount = (prevState) => {
-      return prevState.shoppingCartCount + 1;
-    };
-
-    // !OR use immmediately invoked function
-    // (function (prevState) {
-    //   return prevState.shoppingCartCount + 1;
-    // })(state);
-
     switch (action.type) {
       case "ADD_TO_CART":
         return {
           ...state,
           shoppingCart: [...state.shoppingCart, action.payload],
-          shoppingCartCount: newShoppingCartCount(state),
+          shoppingCartCount: incShoppingCartCount(state),
         };
       case "REMOVE_FROM_CART":
         return {
@@ -35,6 +40,7 @@ export const ShoppingCartProvider = ({ children }) => {
           shoppingCart: state.shoppingCart.filter((cartItem) => {
             return cartItem.id !== action.payload.id;
           }),
+          shoppingCartCount: decShoppingCartCount(state),
         };
       default:
         return state;
@@ -57,7 +63,7 @@ export const ShoppingCartProvider = ({ children }) => {
   );
 };
 
-// useGlobalShoppingCartContext
+// useGlobalShoppingCartContext will be accessed globally
 export const useGlobalShoppingCartContext = () => {
   return useContext(ShoppingCartContext);
 };
