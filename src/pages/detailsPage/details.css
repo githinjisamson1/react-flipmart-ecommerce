@@ -1,0 +1,79 @@
+.detail-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail-item {
+  margin-top: 5rem;
+  /* background-color: yellow; */
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  gap: 1.5rem;
+  width: 75%;
+  height: 350px;
+  border: 1px solid #ccc;
+  /* border-radius: 5px; */
+}
+.detail-item .image {
+  /* display: block; */
+  width: 50%;
+  height: 100%;
+  /* border-right: 1px solid #ccc; */
+  /* border-radius: 5px; */
+}
+.detail-item .details {
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 1.5rem; */
+}
+.detail-item .rating-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail-item .rating-price .price::before {
+  content: "$ ";
+  color: maroon;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.detail-item .rating-price .price {
+  font-size: 2rem;
+}
+.detail-item .brand {
+  font-weight: 400;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+}
+.detail-item .title {
+  font-weight: 700;
+}
+.detail-item .description {
+  font-weight: 200;
+}
+.detail-item .category {
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.detail-item button {
+  width: 100%;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  background-color: maroon;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: all 300ms ease;
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+}
+.detail-item button:hover {
+  background-color: #fff;
+  color: maroon;
+  border: 1px solid #ccc;
+}
