@@ -36,21 +36,25 @@ const Details = () => {
   } = match;
 
   return (
-    <>
+    <div div className="detail-section">
       {/* conditional rendering/short-circuit */}
       {match && (
-        <div>
+        <div className="detail-item">
           <img src={thumbnail} alt={title} className="image" />
           <div className="details">
-            <h3 className="title">{title}</h3>
+            <div className="rating-price">
+              <div className="rating">{rating}</div>
+              <div className="price">{price}</div>
+            </div>
             <h5 className="brand">{brand}</h5>
+            <h2 className="title">{title}</h2>
             <p className="description">{description}</p>
-            <p className="category">{category}</p>
+            <p className="category">Category: {category}</p>
             <button className="add-to-cart-btn">Add to Cart</button>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
