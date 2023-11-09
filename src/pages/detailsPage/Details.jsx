@@ -2,6 +2,7 @@ import React from "react";
 import "./details.css";
 import { useParams } from "react-router-dom";
 import { useGlobalProductsContext } from "../../context/productsContext";
+import RatingComponent from "../../components/rating/RatingComponent";
 
 const Details = () => {
   // access value prop using ProductsProvider
@@ -43,7 +44,7 @@ const Details = () => {
           <img src={thumbnail} alt={title} className="image" />
           <div className="details">
             <div className="rating-price">
-              <div className="rating">{rating}</div>
+              <div className="rating"><RatingComponent rating={rating}/></div>
               <div className="price">{price}</div>
             </div>
             <h5 className="brand">{brand}</h5>
