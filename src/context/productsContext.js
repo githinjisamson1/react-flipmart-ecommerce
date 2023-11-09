@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from "react";
 
-// ProductsContext
+// ProductsContext => returns {Provider, Consumer}
 const ProductsContext = React.createContext();
 
 // Provider
@@ -12,13 +12,15 @@ export const ProductsProvider = ({ children }) => {
     error: "",
   };
 
-  // reducer
+  // reducer to switch through action types
   const productsReducer = (state, action) => {
     switch (action.type) {
       case "FETCH_REQUEST":
         return {
           ...state,
           loading: true,
+          products: [],
+          error: "",
         };
       case "FETCH_SUCCESS":
         return {
@@ -40,7 +42,7 @@ export const ProductsProvider = ({ children }) => {
     }
   };
 
-  // useReducer
+  // useReducer => returns [state, dispatch]
   const [productsState, dispatchForProducts] = useReducer(
     productsReducer,
     initialProductsState
@@ -53,7 +55,7 @@ export const ProductsProvider = ({ children }) => {
   );
 };
 
-// useGlobalProductsContext
+// useGlobalProductsContext will be accessed globally
 export const useGlobalProductsContext = () => {
   return useContext(ProductsContext);
 };

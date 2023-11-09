@@ -7,6 +7,7 @@ import { ProductsProvider } from "./context/productsContext";
 import { ShoppingCartProvider } from "./context/shoppingCartContext";
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
+// using context API to avoid unnecessary prop drilling
 root.render(
   <ProductsProvider>
     <ShoppingCartProvider>

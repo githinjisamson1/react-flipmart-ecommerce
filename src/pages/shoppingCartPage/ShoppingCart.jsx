@@ -6,6 +6,7 @@ import "./shoppingCart.css";
 const ShoppingCart = () => {
   // access value prop from ShoppingCartProvider
   const { shoppingCartState } = useGlobalShoppingCartContext();
+
   return (
     <div className="shopping-cart">
       {/* conditional rendering/short-circuit */}
@@ -13,6 +14,11 @@ const ShoppingCart = () => {
         shoppingCartState.shoppingCart.map((cartItem) => {
           return <CartItem key={cartItem.id} cartItem={cartItem} />;
         })}
+
+      {/* totalPrice section */}
+      <div className="total-price">
+        Total Price: $ {shoppingCartState.totalPrice}
+      </div>
     </div>
   );
 };

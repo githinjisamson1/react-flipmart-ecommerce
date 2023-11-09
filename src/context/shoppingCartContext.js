@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from "react";
 
-// ShoppingCartContext
+// ShoppingCartContext => returns {Provider, Consumer}
 const ShoppingCartContext = React.createContext();
 
 // ShoppingCartProvider
@@ -41,21 +41,27 @@ export const ShoppingCartProvider = ({ children }) => {
     //   return prevState.shoppingCartCount + 1;
     // })(state);
 
+    // TODO: spread oldState return newState
     switch (action.type) {
       case "ADD_TO_CART":
         return {
           ...state,
           shoppingCart: handleAddToCart(state),
           shoppingCartCount: handleIncreasingCartCount(state),
+
+          // totalPrice of already updatedState
           totalPrice: handleAddToCart(state).reduce((accumulator, cartItem) => {
             return (accumulator += cartItem.price);
           }, initialShoppingCartState.totalPrice),
         };
+
       case "REMOVE_FROM_CART":
         return {
           ...state,
           shoppingCart: handleDeleteFromCart(state),
           shoppingCartCount: handleDecreasingCartCount(state),
+
+          // totalPrice of already updatedState
           totalPrice: handleDeleteFromCart(state).reduce(
             (accumulator, cartItem) => {
               return (accumulator += cartItem.price);

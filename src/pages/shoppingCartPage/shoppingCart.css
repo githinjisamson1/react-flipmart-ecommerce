@@ -6,7 +6,7 @@
 }
 .cart-item {
   margin: 1rem 0;
-  border: 1px solid #ccc;
+  border: 1.5px solid #ccc;
   padding: 10px;
   width: 50%;
 }
@@ -38,7 +38,6 @@
 }
 .cart-item .bottom .increase-count-decrease {
   width: 200px;
-
 }
 .cart-item button {
   padding: 5px;

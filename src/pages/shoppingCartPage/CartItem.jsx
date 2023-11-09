@@ -2,8 +2,11 @@ import React from "react";
 import { useGlobalShoppingCartContext } from "../../context/shoppingCartContext";
 
 const CartItem = ({ cartItem }) => {
-  const { dispatchForShoppingCart } = useGlobalShoppingCartContext();
-  // destructuring product
+  // access value prop from ShoppingCartProvider
+  const { shoppingCartState, dispatchForShoppingCart } =
+    useGlobalShoppingCartContext();
+
+  // destructuring cartItem
   const {
     brand,
     category,
@@ -17,6 +20,7 @@ const CartItem = ({ cartItem }) => {
     thumbnail,
     title,
   } = cartItem;
+
   return (
     <div className="cart-item">
       <div className="top">
@@ -26,7 +30,7 @@ const CartItem = ({ cartItem }) => {
       <div className="bottom">
         <div className="increase-count-decrease">
           <button className="decrease">Decrease</button>
-          <h3 className="count">0</h3>
+          <h3 className="count">{shoppingCartState.shoppingCartCount}</h3>
           <button className="increase">Increase</button>
         </div>
         <div className="price-delete">
@@ -38,6 +42,7 @@ const CartItem = ({ cartItem }) => {
                   type: "REMOVE_FROM_CART",
                   payload: cartItem,
                 });
+                alert("Product removed from cart");
               }}
               className="fa-solid fa-trash-can"
             ></i>

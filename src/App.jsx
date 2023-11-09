@@ -8,6 +8,7 @@ import Details from "./pages/detailsPage/Details";
 const App = () => {
   return (
     <div className="App">
+      {/* Navbar appears on all pages */}
       <Navbar />
       {/* configure routes */}
       <Routes>

@@ -9,14 +9,22 @@ const Products = () => {
 
   // GET all products
   const fetchAllProducts = () => {
+    dispatchForProducts({ type: "FETCH_REQUEST" });
+
+    // fetch API - all
     fetch("https://dummyjson.com/products")
       .then((response) => {
+        // convert readableStream to json
         return response.json();
       })
       .then((data) => {
-        dispatchForProducts({ type: "FETCH_REQUEST" });
         console.log(data.products);
-        dispatchForProducts({ type: "FETCH_SUCCESS", payload: data.products });
+        if (data.products) {
+          dispatchForProducts({
+            type: "FETCH_SUCCESS",
+            payload: data.products,
+          });
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -26,7 +34,6 @@ const Products = () => {
 
   // run side effect once/initial render
   useEffect(() => {
-    setTimeout(() => {});
     fetchAllProducts();
   }, []);
 

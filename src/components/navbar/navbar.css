@@ -16,31 +16,25 @@ header h1 a {
   text-decoration: none;
   color: #fff;
 }
+
 .navigation-links a {
-  margin-right: 1rem;
-}
-.navigation-links a {
-  /* display: block; */
   position: relative;
   font-size: 1.25rem;
-  cursor: pointer;
-  /* background-color: yellow; */
+  margin-right: 1rem;
 }
 .cart-items-count {
   position: absolute;
   right: -15px;
   bottom: -5px;
-  display: block;
-  background-color: maroon;
-  /* width: 50px;
-  height: 50px; */
   width: 1rem;
   height: 1rem;
-  border-radius: 50%;
   padding: 10px;
+  background-color: maroon;
+  color: #fff;
+  border-radius: 50%;
   font-size: 0.75rem;
+  font-weight: normal;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: normal;
 }
