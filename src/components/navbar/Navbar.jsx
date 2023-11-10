@@ -23,6 +23,9 @@ const Navbar = () => {
       </div>
 
       <div className="navigation-links">
+        <NavLink style={navLinkStyles} to="about">
+          About
+        </NavLink>
         <NavLink style={navLinkStyles} to="products">
           Products
         </NavLink>
