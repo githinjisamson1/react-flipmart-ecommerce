@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useGlobalProductsContext } from "../../context/productsContext";
+import "./createProductForm.css";
 
 const CreateProductForm = () => {
   // provide ProductsContext
@@ -44,6 +45,7 @@ const CreateProductForm = () => {
       .then((data) => {
         console.log(data);
         dispatchForProducts({ type: "ADD_TO_PRODUCT_LIST", payload: data });
+        alert("New product created successfully");
       })
       .catch((err) => {
         console.log(err.message);
@@ -60,9 +62,26 @@ const CreateProductForm = () => {
       // post new product
       postProduct(formData);
     }
+
+    // empty form values after submission
+    setFormData({
+      brand: "",
+      category: "",
+      description: "",
+      discountedPercentage: "",
+      price: "",
+      rating: "",
+      stock: "",
+      thumbnail: "",
+      title: "",
+    });
+    
   };
   return (
-    <form onSubmit={(e) => handleFormSubmission(e)}>
+    <form
+      className="create-product-form"
+      onSubmit={(e) => handleFormSubmission(e)}
+    >
       <h2>Add Product</h2>
       <input
         type="text"
@@ -127,10 +146,8 @@ const CreateProductForm = () => {
         onChange={(e) => handleChange(e)}
         placeholder="title"
       />
-      <br />
-      <br />
-
-      <input type="submit" />
+      <button type="submit">Submit</button>
+      {/* <input type="submit" /> */}
     </form>
   );
 };
