@@ -3,10 +3,14 @@ import "./details.css";
 import { useParams } from "react-router-dom";
 import { useGlobalProductsContext } from "../../context/productsContext";
 import RatingComponent from "../../components/rating/RatingComponent";
+import { useGlobalShoppingCartContext } from "../../context/shoppingCartContext";
 
 const Details = () => {
-  // access value prop using ProductsProvider
+  // Provide ProductsContext
   const { productsState } = useGlobalProductsContext();
+
+  // Provide ShoppingCartContext
+  const { dispatchForShoppingCart } = useGlobalShoppingCartContext();
 
   //   grab/access productId from URL
   const { productId } = useParams();
@@ -44,14 +48,28 @@ const Details = () => {
           <img src={thumbnail} alt={title} className="image" />
           <div className="details">
             <div className="rating-price">
-              <div className="rating"><RatingComponent rating={rating}/></div>
+              <div className="rating">
+                {/* prop drilling rating */}
+                <RatingComponent rating={rating} />
+              </div>
               <div className="price">{price}</div>
             </div>
             <h5 className="brand">{brand}</h5>
             <h2 className="title">{title}</h2>
             <p className="description">{description}</p>
             <p className="category">Category: {category}</p>
-            <button className="add-to-cart-btn">Add to Cart</button>
+            <button
+              onClick={() => {
+                dispatchForShoppingCart({
+                  type: "ADD_TO_CART",
+                  payload: match,
+                });
+                alert("Product added to cart");
+              }}
+              className="add-to-cart-btn"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       )}
