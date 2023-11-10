@@ -29,6 +29,9 @@ const Navbar = () => {
         <NavLink style={navLinkStyles} to="products">
           Products
         </NavLink>
+        <NavLink style={navLinkStyles} to="login">
+          Login
+        </NavLink>
         <NavLink style={navLinkStyles} to="shoppingCart">
           <i className="fa-solid fa-bag-shopping"></i>
           <span className="cart-items-count">
