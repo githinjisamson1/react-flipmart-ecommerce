@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useGlobalProductsContext } from "../../context/productsContext";
 
 const CreateProductForm = () => {
+  // provide ProductsContext
+  const { dispatchForProducts } = useGlobalProductsContext();
+
   // state for formData
   const [formData, setFormData] = useState({
     brand: "",
@@ -39,6 +43,7 @@ const CreateProductForm = () => {
       })
       .then((data) => {
         console.log(data);
+        dispatchForProducts({ type: "ADD_TO_PRODUCT_LIST", payload: data });
       })
       .catch((err) => {
         console.log(err.message);
