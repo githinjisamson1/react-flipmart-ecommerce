@@ -6,6 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import Details from "./pages/detailsPage/Details";
 import About from "./pages/aboutPage/About";
 import Footer from "./components/footer/Footer";
+import Login from "./pages/loginPage/Login";
 
 const App = () => {
   return (
@@ -18,9 +19,9 @@ const App = () => {
         <Route index path="/products" element={<Products />} />
         <Route path="products/:productId" element={<Details />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer/>
-
+      <Footer />
     </div>
   );
 };
