@@ -1,0 +1,92 @@
+.about {
+  color: #333;
+}
+.hero {
+  height: 350px;
+}
+.hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.who-we-are {
+  width: 90%;
+  height: 300px;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.who-we-are .desc {
+  width: 50%;
+  line-height: 2rem;
+}
+.who-we-are .desc h1,
+.our-team h1,
+.why-choose-us h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.who-we-are img {
+  display: block;
+  height: 100%;
+  width: 50%;
+}
+
+.our-team h1,
+.why-choose-us h1 {
+  text-align: center;
+}
+.our-team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 5rem;
+}
+.our-team-cards .card {
+  width: 30%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px #aab;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+}
+.our-team-cards .card img {
+  display: block;
+  width: 75px;
+  height: 75px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+.why-choose-us {
+  /* background-color: yellow; */
+  margin: 3rem;
+}
+.why-us-cards {
+  display: flex;
+  gap: 1.5rem;
+}
+.why-us-cards .card {
+  border: 1px solid #ccc;
+  /* border-radius: 5px;
+  box-shadow: 0px 5px 5px #aab; */
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+}
+.why-us-cards .card i {
+  font-size: 2rem;
+}
+.why-us-cards .card p{
+    text-align: center;
+}
