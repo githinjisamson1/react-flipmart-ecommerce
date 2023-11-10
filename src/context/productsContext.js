@@ -36,6 +36,13 @@ export const ProductsProvider = ({ children }) => {
           products: [],
           error: action.payload,
         };
+      case "ADD_TO_PRODUCT_LIST":
+        return {
+          ...state,
+          loading: false,
+          products: [...state.products, action.payload],
+          error: "",
+        };
 
       default:
         return state;
