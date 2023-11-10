@@ -1,0 +1,75 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+.welcome-form {
+  width: 60%;
+  height: 300px;
+
+  display: flex;
+  gap: 2rem;
+  box-shadow: 7px 7px 7px #ccc;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+}
+.welcome {
+  width: 50%;
+  height: 100%;
+  background-color: maroon;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  letter-spacing: 0.2rem;
+}
+.welcome h1 {
+  font-weight: 400;
+}
+.welcome p{
+    font-weight: 200;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  width: 50%;
+  padding: 2rem;
+}
+.login-form input {
+  border: none;
+  outline: none;
+  border-bottom: 1.5px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+.login-form input:focus {
+  caret-color: maroon;
+  border-bottom: 2px solid maroon;
+}
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: maroon;
+  color: #fff;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  transition: all 300ms ease;
+  border: none;
+}
+.login-form button:hover {
+  background-color: #fff;
+  color: maroon;
+  border: 1px solid #ccc;
+}
