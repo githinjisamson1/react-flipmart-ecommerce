@@ -5,6 +5,7 @@ import ShoppingCart from "./pages/shoppingCartPage/ShoppingCart";
 import Navbar from "./components/navbar/Navbar";
 import Details from "./pages/detailsPage/Details";
 import About from "./pages/aboutPage/About";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
         <Route path="products/:productId" element={<Details />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
       </Routes>
+      <Footer/>
+
     </div>
   );
 };
