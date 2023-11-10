@@ -1,0 +1,43 @@
+.create-product-form {
+  /* width: 20%; */
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+.create-product-form input {
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 5px;
+  padding: 3px;
+  color: #333;
+  transition: all 300ms ease;
+  width: 100%;
+}
+.create-product-form input:focus {
+  border: 2px solid maroon;
+  caret-color: maroon;
+}
+.create-product-form button {
+  width: 100%;
+  background-color: maroon;
+  color: #fff;
+  letter-spacing: 0.5rem;
+  font-weight: 200;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: all 300ms ease;
+
+}
+.create-product-form button:hover {
+  background-color: #fff;
+  color: maroon;
+  border: 1px solid #ccc;
+  font-weight: 300;
+}
