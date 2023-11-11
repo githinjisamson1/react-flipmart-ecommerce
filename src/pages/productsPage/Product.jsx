@@ -7,7 +7,7 @@ const Product = ({ product }) => {
   // to change location
   const navigate = useNavigate();
 
-  // access value prop from ShoppingCartProvider
+  // Provide ShoppingCartContext
   const { dispatchForShoppingCart } = useGlobalShoppingCartContext();
 
   // destructuring product
@@ -24,6 +24,7 @@ const Product = ({ product }) => {
     thumbnail,
     title,
   } = product;
+  //
 
   return (
     <div className="product">

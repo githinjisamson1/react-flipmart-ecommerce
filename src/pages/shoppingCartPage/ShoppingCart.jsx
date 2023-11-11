@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 import "./shoppingCart.css";
 
 const ShoppingCart = () => {
-  // access value prop from ShoppingCartProvider
+  // Provide ShoppingCartContext
   const { shoppingCartState } = useGlobalShoppingCartContext();
 
   return (

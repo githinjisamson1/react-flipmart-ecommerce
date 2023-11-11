@@ -62,7 +62,7 @@ export const ProductsProvider = ({ children }) => {
   );
 };
 
-// useGlobalProductsContext will be accessed globally
+// useGlobalProductsContext can be accessed globally
 export const useGlobalProductsContext = () => {
   return useContext(ProductsContext);
 };

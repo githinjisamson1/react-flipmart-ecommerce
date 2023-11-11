@@ -5,22 +5,15 @@
 }
 .detail-item {
   margin-top: 5rem;
-  /* background-color: yellow; */
   display: flex;
-  /* justify-content: space-between; */
-  /* align-items: center; */
   gap: 1.5rem;
   width: 75%;
   height: 350px;
   border: 1px solid #ccc;
-  /* border-radius: 5px; */
 }
 .detail-item .image {
-  /* display: block; */
   width: 50%;
   height: 100%;
-  /* border-right: 1px solid #ccc; */
-  /* border-radius: 5px; */
 }
 .detail-item .details {
   width: 50%;
@@ -28,7 +21,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* gap: 1.5rem; */
 }
 .detail-item .rating-price {
   display: flex;

@@ -4,8 +4,10 @@ import { NavLink } from "react-router-dom";
 import { useGlobalShoppingCartContext } from "../../context/shoppingCartContext";
 
 const Navbar = () => {
+  // Provide ShoppingCartContext
   const { shoppingCartState } = useGlobalShoppingCartContext();
-  // applying styles based on isActive boolean flag
+
+  // applying styles based on isActive boolean flag passed from NavLink
   const navLinkStyles = ({ isActive }) => {
     return {
       textDecoration: isActive ? "underline" : "none",

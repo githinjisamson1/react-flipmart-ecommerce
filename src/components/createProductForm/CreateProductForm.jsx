@@ -3,7 +3,7 @@ import { useGlobalProductsContext } from "../../context/productsContext";
 import "./createProductForm.css";
 
 const CreateProductForm = () => {
-  // provide ProductsContext
+  // Provide ProductsContext
   const { dispatchForProducts } = useGlobalProductsContext();
 
   // state for formData
@@ -55,9 +55,9 @@ const CreateProductForm = () => {
   // handleFormSubmission
   const handleFormSubmission = (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
 
-    // !only post when form has been filled
+    // !only post when form has been filled/SECURITY/ERROR HANDLING
     if (formData) {
       // post new product
       postProduct(formData);
@@ -146,8 +146,8 @@ const CreateProductForm = () => {
         onChange={(e) => handleChange(e)}
         placeholder="title"
       />
+      
       <button type="submit">Submit</button>
-      {/* <input type="submit" /> */}
     </form>
   );
 };

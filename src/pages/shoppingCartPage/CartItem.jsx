@@ -2,9 +2,8 @@ import React from "react";
 import { useGlobalShoppingCartContext } from "../../context/shoppingCartContext";
 
 const CartItem = ({ cartItem }) => {
-  // access value prop from ShoppingCartProvider
-  const { shoppingCartState, dispatchForShoppingCart } =
-    useGlobalShoppingCartContext();
+  // Provide ShoppingCartContext
+  const { dispatchForShoppingCart } = useGlobalShoppingCartContext();
 
   // destructuring cartItem
   const {
@@ -40,7 +39,9 @@ const CartItem = ({ cartItem }) => {
           >
             Decrease
           </button>
-          <h3 className="count">0</h3>
+          <h3 className="count">
+            {cartItem.quantity ? cartItem.quantity : null}
+          </h3>
           <button
             onClick={() => {
               dispatchForShoppingCart({

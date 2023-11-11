@@ -17,6 +17,23 @@ export const ShoppingCartProvider = ({ children }) => {
     // !handleAddToCart
     const handleAddToCart = (state) => {
       return [...state.shoppingCart, action.payload];
+
+      // TODO: look into when cartItem appears more than once
+      // // !!!return index of item if in cart
+      // const existingItemIndex = state.shoppingCart.findIndex(
+      //   (cartItem) => cartItem.id === action.payload.id
+      // );
+
+      // if (existingItemIndex !== -1) {
+      //   // !!!if in cart increase quantity property
+      //   return [
+      //     ...state.shoppingCart,
+      //     (state.shoppingCart[existingItemIndex].quantity += 1),
+      //   ];
+      // } else {
+      //   // !!!if not in cart/add quantity property/set to 1
+      //   return [...state.shoppingCart, { ...action.payload, quantity: 1 }];
+      // }
     };
 
     // !handleDeleteFromCart
@@ -90,7 +107,7 @@ export const ShoppingCartProvider = ({ children }) => {
   );
 };
 
-// useGlobalShoppingCartContext will be accessed globally
+// useGlobalShoppingCartContext can be accessed globally
 export const useGlobalShoppingCartContext = () => {
   return useContext(ShoppingCartContext);
 };
