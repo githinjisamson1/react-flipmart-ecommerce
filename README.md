@@ -1,8 +1,6 @@
-
 # FlipMart E-Commerce
 
 This web app includes user authentication(not completely implemented) for a safe login process, CRUD operations that are effective for managing products and categories, and a smooth interaction with a DUMMY list API for retrieving realistic product data. Before making a purchase(purchase yet to be implemented), users can examine specific product views, add goods to their shopping cart, and assess the items they have chosen. Our app offers a user-friendly platform for a seamless e-commerce experience, whether you're an admin managing inventory or a customer accessing product information.
-
 
 ## API Reference
 
@@ -20,7 +18,7 @@ Endpoint: https://dummyjson.com
   GET /products/category/smartphones
 ```
 
-#### Post item 
+#### Post item
 
 ```https
   POST /products/add
@@ -42,13 +40,9 @@ Endpoint: https://dummyjson.com
 
 - [@githinjisamson1](https://www.github.com/githinjisamson1)
 
-
 ## Contributing
 
 Contributions are always welcome!
-
-
-
 
 ## Features
 
@@ -62,16 +56,11 @@ Contributions are always welcome!
 - View total price for items in cart
 - View about page upon /about navigation
 
-
-
 ## Feedback
 
 If you have any feedback, please reach out to us at githinjisamson148@gmail.com
 
-
 ## Installation
-
-
 
 ```bash
   copy ssh
@@ -81,7 +70,7 @@ If you have any feedback, please reach out to us at githinjisamson148@gmail.com
   run npm install in your terminal.
   in a new terminal, run npm start. This will run your React app on port 3000.
 ```
-    
+
 ## Lessons Learned
 
 - useState hook usage
@@ -95,12 +84,14 @@ If you have any feedback, please reach out to us at githinjisamson148@gmail.com
 
 ## Tech Stack
 
-**Client:** ``` HTML, CSS, JS, REACT ```
+**Client:** `HTML, CSS, JS, REACT`
 
-**Version control:** ``` Git ```
+**Version control:** `Git`
 
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Used By
 
 For practice :)
-
