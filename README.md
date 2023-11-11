@@ -95,9 +95,9 @@ If you have any feedback, please reach out to us at githinjisamson148@gmail.com
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JS, REACT
+**Client:** ``` HTML, CSS, JS, REACT ```
 
-**Version control:** Git
+**Version control:** ``` Git ```
 
 
 ## Used By
