@@ -1,70 +1,106 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FlipMart E-Commerce
 
-## Available Scripts
+This web app includes user authentication(not completely implemented) for a safe login process, CRUD operations that are effective for managing products and categories, and a smooth interaction with a DUMMY list API for retrieving realistic product data. Before making a purchase(purchase yet to be implemented), users can examine specific product views, add goods to their shopping cart, and assess the items they have chosen. Our app offers a user-friendly platform for a seamless e-commerce experience, whether you're an admin managing inventory or a customer accessing product information.
 
-In the project directory, you can run:
 
-### `npm start`
+## API Reference
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Endpoint: https://dummyjson.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Get all items
 
-### `npm test`
+```https
+  GET /products
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Get items by category
 
-### `npm run build`
+```https
+  GET /products/category/smartphones
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Post item 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```https
+  POST /products/add
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Update item
 
-### `npm run eject`
+```https
+  PATCH /products/1
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Delete item
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```https
+  DELETE /products/1
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Authors
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [@githinjisamson1](https://www.github.com/githinjisamson1)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are always welcome!
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Features
 
-### Making a Progressive Web App
+- Navigate to /products after login
+- See a list of products based on category
+- Create a new product item
+- Navigate to /details/:id upon clicking a product image
+- Add product to cart upon clicking shopping cart icon
+- View items added in cart
+- Increase/decrease/delete a cart item whilst updating shopping cart count
+- View total price for items in cart
+- View about page upon /about navigation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Feedback
 
-### Deployment
+If you have any feedback, please reach out to us at githinjisamson148@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+```bash
+  copy ssh
+  git clone flipmart-ecommerce
+  cd flipmart-ecommerce
+  open using an editor e.g., vs code: code .
+  run npm install in your terminal.
+  in a new terminal, run npm start. This will run your React app on port 3000.
+```
+    
+## Lessons Learned
+
+- useState hook usage
+- useEffect hook usage
+- useContext hook usage
+- useNavigate hook usage
+- useReducer hook usage
+- routing using react-router-dom
+- array methods (map(), filter(), find(), reduce())
+- props, components, importing/exporting components
+
+## Tech Stack
+
+**Client:** HTML, CSS, JS, REACT
+
+**Version control:** Git
+
+
+## Used By
+
+For practice :)
+
