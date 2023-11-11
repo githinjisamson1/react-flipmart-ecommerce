@@ -21,6 +21,7 @@ const App = () => {
         <Route path="/shoppingCart" element={<ShoppingCart />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      {/* Footer appears on all pages */}
       <Footer />
     </div>
   );
